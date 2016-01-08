@@ -102,7 +102,7 @@ namespace Vocals {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void ButtonEdit_Click(object sender, EventArgs e) {
             Actions a = (Actions)listBox1.SelectedItem;
             if (a != null) {
                 FormAction formEditAction = new FormAction(a);
@@ -199,8 +199,9 @@ namespace Vocals {
             answeringSound = true;
         }
 
-
-
-
-    }
+		private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			ButtonEdit_Click(sender, e);
+		}
+	}
 }

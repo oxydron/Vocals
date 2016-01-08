@@ -181,6 +181,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icon\add186.png" />
+    <None Include="Icon\rubbish.png" />
+    <None Include="Icon\history6.png" />
     <Content Include="Vocals.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

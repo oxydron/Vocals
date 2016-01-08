@@ -34,27 +34,32 @@
 			this.ComboApps = new System.Windows.Forms.ComboBox();
 			this.ButtonAddCmd = new System.Windows.Forms.Button();
 			this.ComboProfiles = new System.Windows.Forms.ComboBox();
-			this.ButtonAddProfile = new System.Windows.Forms.Button();
 			this.ListCommands = new System.Windows.Forms.ListBox();
-			this.ButtonDeleteProfile = new System.Windows.Forms.Button();
 			this.ButtonDeleteCmd = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.ButtonEditCmd = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.ButtonDefaultApp = new System.Windows.Forms.Button();
 			this.LogGroup = new System.Windows.Forms.GroupBox();
 			this.ProgressVoiceCaptured = new System.Windows.Forms.ProgressBar();
 			this.TextBoxLog = new System.Windows.Forms.RichTextBox();
 			this.advancedSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MenuAdvancedSettings = new System.Windows.Forms.MenuStrip();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+			this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+			this.ButtonDefaultApp = new System.Windows.Forms.Button();
+			this.ButtonAddProfile = new System.Windows.Forms.Button();
+			this.ButtonDeleteProfile = new System.Windows.Forms.Button();
+			this.Tooltips = new System.Windows.Forms.ToolTip(this.components);
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			this.LogGroup.SuspendLayout();
 			this.MenuAdvancedSettings.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
+			this.flowLayoutPanel2.SuspendLayout();
+			this.flowLayoutPanel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// imageList1
@@ -67,9 +72,9 @@
 			// 
 			this.ComboApps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.ComboApps.FormattingEnabled = true;
-			this.ComboApps.Location = new System.Drawing.Point(29, 38);
+			this.ComboApps.Location = new System.Drawing.Point(3, 3);
 			this.ComboApps.Name = "ComboApps";
-			this.ComboApps.Size = new System.Drawing.Size(187, 21);
+			this.ComboApps.Size = new System.Drawing.Size(377, 21);
 			this.ComboApps.TabIndex = 1;
 			this.ComboApps.SelectedIndexChanged += new System.EventHandler(this.ComboApps_SelectedIndexChanged);
 			// 
@@ -80,6 +85,7 @@
 			this.ButtonAddCmd.Size = new System.Drawing.Size(70, 23);
 			this.ButtonAddCmd.TabIndex = 4;
 			this.ButtonAddCmd.Text = "New";
+			this.Tooltips.SetToolTip(this.ButtonAddCmd, "Create a new voice command");
 			this.ButtonAddCmd.UseVisualStyleBackColor = true;
 			this.ButtonAddCmd.Click += new System.EventHandler(this.ButtonAddCmd_Click);
 			// 
@@ -87,21 +93,11 @@
 			// 
 			this.ComboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.ComboProfiles.FormattingEnabled = true;
-			this.ComboProfiles.Location = new System.Drawing.Point(29, 52);
+			this.ComboProfiles.Location = new System.Drawing.Point(3, 3);
 			this.ComboProfiles.Name = "ComboProfiles";
-			this.ComboProfiles.Size = new System.Drawing.Size(226, 21);
+			this.ComboProfiles.Size = new System.Drawing.Size(378, 21);
 			this.ComboProfiles.TabIndex = 5;
 			this.ComboProfiles.SelectedIndexChanged += new System.EventHandler(this.ComboProfiles_SelectedIndexChanged);
-			// 
-			// ButtonAddProfile
-			// 
-			this.ButtonAddProfile.Location = new System.Drawing.Point(29, 23);
-			this.ButtonAddProfile.Name = "ButtonAddProfile";
-			this.ButtonAddProfile.Size = new System.Drawing.Size(98, 23);
-			this.ButtonAddProfile.TabIndex = 7;
-			this.ButtonAddProfile.Text = "Add profile";
-			this.ButtonAddProfile.UseVisualStyleBackColor = true;
-			this.ButtonAddProfile.Click += new System.EventHandler(this.ButtonAddProfile_Click);
 			// 
 			// ListCommands
 			// 
@@ -113,16 +109,6 @@
 			this.ListCommands.TabIndex = 8;
 			this.ListCommands.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListCommands_MouseDoubleClick);
 			// 
-			// ButtonDeleteProfile
-			// 
-			this.ButtonDeleteProfile.Location = new System.Drawing.Point(151, 23);
-			this.ButtonDeleteProfile.Name = "ButtonDeleteProfile";
-			this.ButtonDeleteProfile.Size = new System.Drawing.Size(104, 23);
-			this.ButtonDeleteProfile.TabIndex = 10;
-			this.ButtonDeleteProfile.Text = "Delete profile";
-			this.ButtonDeleteProfile.UseVisualStyleBackColor = true;
-			this.ButtonDeleteProfile.Click += new System.EventHandler(this.ButtonDeleteProfile_Click);
-			// 
 			// ButtonDeleteCmd
 			// 
 			this.ButtonDeleteCmd.Location = new System.Drawing.Point(155, 3);
@@ -130,18 +116,16 @@
 			this.ButtonDeleteCmd.Size = new System.Drawing.Size(70, 23);
 			this.ButtonDeleteCmd.TabIndex = 11;
 			this.ButtonDeleteCmd.Text = "Delete";
+			this.Tooltips.SetToolTip(this.ButtonDeleteCmd, "Delete a voice command");
 			this.ButtonDeleteCmd.UseVisualStyleBackColor = true;
 			this.ButtonDeleteCmd.Click += new System.EventHandler(this.ButtonDeleteCmd_Click);
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.ButtonAddProfile);
-			this.groupBox1.Controls.Add(this.ButtonDeleteProfile);
-			this.groupBox1.Controls.Add(this.ComboProfiles);
-			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.groupBox1.Location = new System.Drawing.Point(0, 24);
+			this.groupBox1.Controls.Add(this.flowLayoutPanel2);
+			this.groupBox1.Location = new System.Drawing.Point(12, 27);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(277, 227);
+			this.groupBox1.Size = new System.Drawing.Size(450, 46);
 			this.groupBox1.TabIndex = 12;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Profiles";
@@ -151,7 +135,7 @@
 			this.groupBox2.Controls.Add(this.ListCommands);
 			this.groupBox2.Controls.Add(this.flowLayoutPanel1);
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
-			this.groupBox2.Location = new System.Drawing.Point(612, 24);
+			this.groupBox2.Location = new System.Drawing.Point(469, 24);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(277, 519);
 			this.groupBox2.TabIndex = 13;
@@ -166,40 +150,28 @@
 			this.ButtonEditCmd.Size = new System.Drawing.Size(70, 23);
 			this.ButtonEditCmd.TabIndex = 12;
 			this.ButtonEditCmd.Text = "Edit";
+			this.Tooltips.SetToolTip(this.ButtonEditCmd, "Edit a existing voice command");
 			this.ButtonEditCmd.UseVisualStyleBackColor = true;
 			this.ButtonEditCmd.Click += new System.EventHandler(this.ButtonEditCmd_Click);
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Controls.Add(this.ButtonDefaultApp);
-			this.groupBox4.Controls.Add(this.ComboApps);
-			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox4.Location = new System.Drawing.Point(277, 24);
+			this.groupBox4.Controls.Add(this.flowLayoutPanel3);
+			this.groupBox4.Location = new System.Drawing.Point(13, 79);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(335, 227);
+			this.groupBox4.Size = new System.Drawing.Size(450, 51);
 			this.groupBox4.TabIndex = 15;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Application";
 			this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
 			// 
-			// ButtonDefaultApp
-			// 
-			this.ButtonDefaultApp.Location = new System.Drawing.Point(222, 38);
-			this.ButtonDefaultApp.Name = "ButtonDefaultApp";
-			this.ButtonDefaultApp.Size = new System.Drawing.Size(33, 23);
-			this.ButtonDefaultApp.TabIndex = 2;
-			this.ButtonDefaultApp.Text = "#";
-			this.ButtonDefaultApp.UseVisualStyleBackColor = true;
-			this.ButtonDefaultApp.Click += new System.EventHandler(this.button6_Click);
-			// 
 			// LogGroup
 			// 
 			this.LogGroup.Controls.Add(this.TextBoxLog);
 			this.LogGroup.Controls.Add(this.ProgressVoiceCaptured);
-			this.LogGroup.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.LogGroup.Location = new System.Drawing.Point(0, 251);
+			this.LogGroup.Location = new System.Drawing.Point(12, 136);
 			this.LogGroup.Name = "LogGroup";
-			this.LogGroup.Size = new System.Drawing.Size(612, 292);
+			this.LogGroup.Size = new System.Drawing.Size(453, 407);
 			this.LogGroup.TabIndex = 16;
 			this.LogGroup.TabStop = false;
 			this.LogGroup.Text = "Logs";
@@ -210,7 +182,7 @@
 			this.ProgressVoiceCaptured.Dock = System.Windows.Forms.DockStyle.Top;
 			this.ProgressVoiceCaptured.Location = new System.Drawing.Point(3, 16);
 			this.ProgressVoiceCaptured.Name = "ProgressVoiceCaptured";
-			this.ProgressVoiceCaptured.Size = new System.Drawing.Size(606, 11);
+			this.ProgressVoiceCaptured.Size = new System.Drawing.Size(447, 11);
 			this.ProgressVoiceCaptured.Step = 11;
 			this.ProgressVoiceCaptured.TabIndex = 1;
 			// 
@@ -220,7 +192,7 @@
 			this.TextBoxLog.Location = new System.Drawing.Point(3, 27);
 			this.TextBoxLog.Name = "TextBoxLog";
 			this.TextBoxLog.ReadOnly = true;
-			this.TextBoxLog.Size = new System.Drawing.Size(606, 262);
+			this.TextBoxLog.Size = new System.Drawing.Size(447, 377);
 			this.TextBoxLog.TabIndex = 0;
 			this.TextBoxLog.Text = "";
 			// 
@@ -237,7 +209,7 @@
             this.advancedSettingsToolStripMenuItem});
 			this.MenuAdvancedSettings.Location = new System.Drawing.Point(0, 0);
 			this.MenuAdvancedSettings.Name = "MenuAdvancedSettings";
-			this.MenuAdvancedSettings.Size = new System.Drawing.Size(889, 24);
+			this.MenuAdvancedSettings.Size = new System.Drawing.Size(746, 24);
 			this.MenuAdvancedSettings.TabIndex = 17;
 			this.MenuAdvancedSettings.Text = "menuStrip1";
 			// 
@@ -252,11 +224,65 @@
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(271, 33);
 			this.flowLayoutPanel1.TabIndex = 13;
 			// 
+			// flowLayoutPanel2
+			// 
+			this.flowLayoutPanel2.Controls.Add(this.ComboProfiles);
+			this.flowLayoutPanel2.Controls.Add(this.ButtonAddProfile);
+			this.flowLayoutPanel2.Controls.Add(this.ButtonDeleteProfile);
+			this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 16);
+			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(444, 27);
+			this.flowLayoutPanel2.TabIndex = 11;
+			// 
+			// flowLayoutPanel3
+			// 
+			this.flowLayoutPanel3.Controls.Add(this.ComboApps);
+			this.flowLayoutPanel3.Controls.Add(this.ButtonDefaultApp);
+			this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 16);
+			this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+			this.flowLayoutPanel3.Size = new System.Drawing.Size(444, 32);
+			this.flowLayoutPanel3.TabIndex = 3;
+			// 
+			// ButtonDefaultApp
+			// 
+			this.ButtonDefaultApp.Image = global::Vocals.Properties.Resources.history6;
+			this.ButtonDefaultApp.Location = new System.Drawing.Point(386, 3);
+			this.ButtonDefaultApp.Name = "ButtonDefaultApp";
+			this.ButtonDefaultApp.Size = new System.Drawing.Size(24, 24);
+			this.ButtonDefaultApp.TabIndex = 2;
+			this.Tooltips.SetToolTip(this.ButtonDefaultApp, "Reload process list");
+			this.ButtonDefaultApp.UseVisualStyleBackColor = true;
+			this.ButtonDefaultApp.Click += new System.EventHandler(this.button6_Click);
+			// 
+			// ButtonAddProfile
+			// 
+			this.ButtonAddProfile.Image = global::Vocals.Properties.Resources.add186;
+			this.ButtonAddProfile.Location = new System.Drawing.Point(387, 3);
+			this.ButtonAddProfile.Name = "ButtonAddProfile";
+			this.ButtonAddProfile.Size = new System.Drawing.Size(24, 24);
+			this.ButtonAddProfile.TabIndex = 7;
+			this.Tooltips.SetToolTip(this.ButtonAddProfile, "Add a new profile");
+			this.ButtonAddProfile.UseVisualStyleBackColor = true;
+			this.ButtonAddProfile.Click += new System.EventHandler(this.ButtonAddProfile_Click);
+			// 
+			// ButtonDeleteProfile
+			// 
+			this.ButtonDeleteProfile.Image = global::Vocals.Properties.Resources.rubbish;
+			this.ButtonDeleteProfile.Location = new System.Drawing.Point(417, 3);
+			this.ButtonDeleteProfile.Name = "ButtonDeleteProfile";
+			this.ButtonDeleteProfile.Size = new System.Drawing.Size(24, 24);
+			this.ButtonDeleteProfile.TabIndex = 10;
+			this.Tooltips.SetToolTip(this.ButtonDeleteProfile, "Delete current profile");
+			this.ButtonDeleteProfile.UseVisualStyleBackColor = true;
+			this.ButtonDeleteProfile.Click += new System.EventHandler(this.ButtonDeleteProfile_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(889, 543);
+			this.ClientSize = new System.Drawing.Size(746, 543);
 			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.LogGroup);
@@ -275,6 +301,8 @@
 			this.MenuAdvancedSettings.ResumeLayout(false);
 			this.MenuAdvancedSettings.PerformLayout();
 			this.flowLayoutPanel1.ResumeLayout(false);
+			this.flowLayoutPanel2.ResumeLayout(false);
+			this.flowLayoutPanel3.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -301,6 +329,9 @@
         private System.Windows.Forms.ProgressBar ProgressVoiceCaptured;
         private System.Windows.Forms.Button ButtonDefaultApp;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+		private System.Windows.Forms.ToolTip Tooltips;
 	}
 }
 
