@@ -482,7 +482,7 @@ namespace Vocals
 					writer.Serialize(xmlStream, _ProfileList);
 					xmlStream.Close();
 				}
-				catch (Exception ex)
+				catch
 				{
 					// TODO refatorar para regionalização
 					DialogResult res = MessageBox.Show("Le fichier profiles_xml.vc est en cours d'utilisation par un autre processus. Voulez vous quitter sans sauvegarder ?",
@@ -492,7 +492,7 @@ namespace Vocals
 						MessageBoxDefaultButton.Button1);
 				}
 			}
-			catch (Exception ex)
+			catch
 			{
 				// TODO refatorar para regionalização
 				DialogResult res = MessageBox.Show("Le fichier profiles.vd est en cours d'utilisation par un autre processus. Voulez vous quitter sans sauvegarder ?",
@@ -513,7 +513,7 @@ namespace Vocals
 
 		private void initialyzeSpeechEngine()
 		{
-			TextBoxLog.AppendText("Starting Speech Recognition Engine \n");
+			TextBoxLog.AppendText("Welcome to Vocals, a Speech Recognition Engine!\nForked from Al-th, maintained by Oxydron\n");
 			RecognizerInfo info = null;
 
 			//Use system locale language if no language option can be retrieved
@@ -541,11 +541,13 @@ namespace Vocals
 			{
 				TextBoxLog.AppendText("Setting VR engine language to " + info.Culture.DisplayName + "\n");
 			}
-			else {
+			else
+			{
 				TextBoxLog.AppendText("Could not find any installed recognizers\n");
 				TextBoxLog.AppendText("Trying to find a fix right now for this specific error\n");
 				return;
 			}
+
 			_SpeechEngine = new SpeechRecognitionEngine(info);
 			_SpeechEngine.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(sr_speechRecognized);
 			_SpeechEngine.AudioLevelUpdated += new EventHandler<AudioLevelUpdatedEventArgs>(sr_audioLevelUpdated);
@@ -554,7 +556,7 @@ namespace Vocals
 			{
 				_SpeechEngine.SetInputToDefaultAudioDevice();
 			}
-			catch (InvalidOperationException ioe)
+			catch
 			{
 				TextBoxLog.AppendText("No microphone were found\n");
 			}

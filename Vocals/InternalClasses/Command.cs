@@ -91,9 +91,7 @@ namespace Vocals
 						synth.SpeakAsync(answeringString);
 					}
 				}
-				catch (Exception e)
-				{
-				}
+				catch { }
 			}
 
 			if (answeringSound && answeringSoundPath != null)
