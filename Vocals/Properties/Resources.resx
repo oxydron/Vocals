@@ -127,10 +127,13 @@
   <data name="navigate6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\navigate6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow483" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\arrow483.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="history6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\history6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow483" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\arrow483.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\save27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

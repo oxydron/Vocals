@@ -104,17 +104,17 @@
     </Compile>
     <Compile Include="InternalClasses\Actions.cs" />
     <Compile Include="InternalClasses\Command.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="InternalClasses\Profile.cs" />
     <Compile Include="InternalClasses\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOptions.resx">
       <DependentUpon>FormOptions.cs</DependentUpon>
@@ -186,6 +186,7 @@
     <None Include="Icon\history6.png" />
     <None Include="Icon\navigate6.png" />
     <None Include="Icon\arrow483.png" />
+    <None Include="Icon\save27.png" />
     <Content Include="Vocals.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

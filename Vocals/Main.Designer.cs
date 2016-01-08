@@ -1,6 +1,6 @@
 ﻿namespace Vocals
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.ComboApps = new System.Windows.Forms.ComboBox();
 			this.ButtonAddCmd = new System.Windows.Forms.Button();
 			this.ComboProfiles = new System.Windows.Forms.ComboBox();
 			this.ListCommands = new System.Windows.Forms.ListBox();
 			this.ButtonDeleteCmd = new System.Windows.Forms.Button();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.GroupProfiles = new System.Windows.Forms.GroupBox();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.ButtonAddProfile = new System.Windows.Forms.Button();
+			this.ButtonDeleteProfile = new System.Windows.Forms.Button();
+			this.GroupCommands = new System.Windows.Forms.GroupBox();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.ButtonEditCmd = new System.Windows.Forms.Button();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.GroupApps = new System.Windows.Forms.GroupBox();
 			this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-			this.GroupBoxLog = new System.Windows.Forms.GroupBox();
+			this.ButtonDefaultApp = new System.Windows.Forms.Button();
+			this.GroupLogs = new System.Windows.Forms.GroupBox();
 			this.TextBoxLog = new System.Windows.Forms.RichTextBox();
 			this.ProgressVoiceCaptured = new System.Windows.Forms.ProgressBar();
 			this.advancedSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MenuAdvancedSettings = new System.Windows.Forms.MenuStrip();
 			this.Tooltips = new System.Windows.Forms.ToolTip(this.components);
-			this.ButtonDefaultApp = new System.Windows.Forms.Button();
-			this.ButtonAddProfile = new System.Windows.Forms.Button();
-			this.ButtonDeleteProfile = new System.Windows.Forms.Button();
-			this.groupBox1.SuspendLayout();
+			this.GroupProfiles.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			this.GroupCommands.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
-			this.groupBox4.SuspendLayout();
+			this.GroupApps.SuspendLayout();
 			this.flowLayoutPanel3.SuspendLayout();
-			this.GroupBoxLog.SuspendLayout();
+			this.GroupLogs.SuspendLayout();
 			this.MenuAdvancedSettings.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -100,7 +100,7 @@
 			this.ComboProfiles.FormattingEnabled = true;
 			this.ComboProfiles.Location = new System.Drawing.Point(3, 3);
 			this.ComboProfiles.Name = "ComboProfiles";
-			this.ComboProfiles.Size = new System.Drawing.Size(388, 28);
+			this.ComboProfiles.Size = new System.Drawing.Size(389, 28);
 			this.ComboProfiles.TabIndex = 5;
 			this.ComboProfiles.SelectedIndexChanged += new System.EventHandler(this.ComboProfiles_SelectedIndexChanged);
 			// 
@@ -110,9 +110,9 @@
 			this.ListCommands.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ListCommands.FormattingEnabled = true;
 			this.ListCommands.ItemHeight = 20;
-			this.ListCommands.Location = new System.Drawing.Point(3, 64);
+			this.ListCommands.Location = new System.Drawing.Point(3, 62);
 			this.ListCommands.Name = "ListCommands";
-			this.ListCommands.Size = new System.Drawing.Size(271, 452);
+			this.ListCommands.Size = new System.Drawing.Size(271, 454);
 			this.ListCommands.TabIndex = 8;
 			this.ListCommands.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListCommands_MouseDoubleClick);
 			// 
@@ -130,18 +130,18 @@
 			this.ButtonDeleteCmd.UseVisualStyleBackColor = true;
 			this.ButtonDeleteCmd.Click += new System.EventHandler(this.ButtonDeleteCmd_Click);
 			// 
-			// groupBox1
+			// GroupProfiles
 			// 
-			this.groupBox1.Controls.Add(this.flowLayoutPanel2);
-			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(0, 24);
-			this.groupBox1.MinimumSize = new System.Drawing.Size(0, 64);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(469, 64);
-			this.groupBox1.TabIndex = 12;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Profiles";
+			this.GroupProfiles.Controls.Add(this.flowLayoutPanel2);
+			this.GroupProfiles.Dock = System.Windows.Forms.DockStyle.Top;
+			this.GroupProfiles.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.GroupProfiles.Location = new System.Drawing.Point(0, 24);
+			this.GroupProfiles.MinimumSize = new System.Drawing.Size(0, 64);
+			this.GroupProfiles.Name = "GroupProfiles";
+			this.GroupProfiles.Size = new System.Drawing.Size(469, 64);
+			this.GroupProfiles.TabIndex = 12;
+			this.GroupProfiles.TabStop = false;
+			this.GroupProfiles.Text = "Profiles";
 			// 
 			// flowLayoutPanel2
 			// 
@@ -149,24 +149,47 @@
 			this.flowLayoutPanel2.Controls.Add(this.ButtonAddProfile);
 			this.flowLayoutPanel2.Controls.Add(this.ButtonDeleteProfile);
 			this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 29);
+			this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 27);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-			this.flowLayoutPanel2.Size = new System.Drawing.Size(463, 32);
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(463, 34);
 			this.flowLayoutPanel2.TabIndex = 11;
 			// 
-			// groupBox2
+			// ButtonAddProfile
 			// 
-			this.groupBox2.Controls.Add(this.ListCommands);
-			this.groupBox2.Controls.Add(this.flowLayoutPanel1);
-			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
-			this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox2.Location = new System.Drawing.Point(469, 24);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(277, 519);
-			this.groupBox2.TabIndex = 13;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Commands ";
-			this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+			this.ButtonAddProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ButtonAddProfile.Image = global::Vocals.Properties.Resources.add186;
+			this.ButtonAddProfile.Location = new System.Drawing.Point(398, 3);
+			this.ButtonAddProfile.Name = "ButtonAddProfile";
+			this.ButtonAddProfile.Size = new System.Drawing.Size(28, 28);
+			this.ButtonAddProfile.TabIndex = 7;
+			this.Tooltips.SetToolTip(this.ButtonAddProfile, "Add a new profile");
+			this.ButtonAddProfile.UseVisualStyleBackColor = true;
+			this.ButtonAddProfile.Click += new System.EventHandler(this.ButtonAddProfile_Click);
+			// 
+			// ButtonDeleteProfile
+			// 
+			this.ButtonDeleteProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ButtonDeleteProfile.Image = global::Vocals.Properties.Resources.rubbish;
+			this.ButtonDeleteProfile.Location = new System.Drawing.Point(432, 3);
+			this.ButtonDeleteProfile.Name = "ButtonDeleteProfile";
+			this.ButtonDeleteProfile.Size = new System.Drawing.Size(28, 28);
+			this.ButtonDeleteProfile.TabIndex = 10;
+			this.Tooltips.SetToolTip(this.ButtonDeleteProfile, "Delete current profile");
+			this.ButtonDeleteProfile.UseVisualStyleBackColor = true;
+			this.ButtonDeleteProfile.Click += new System.EventHandler(this.ButtonDeleteProfile_Click);
+			// 
+			// GroupCommands
+			// 
+			this.GroupCommands.Controls.Add(this.ListCommands);
+			this.GroupCommands.Controls.Add(this.flowLayoutPanel1);
+			this.GroupCommands.Dock = System.Windows.Forms.DockStyle.Right;
+			this.GroupCommands.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.GroupCommands.Location = new System.Drawing.Point(469, 24);
+			this.GroupCommands.Name = "GroupCommands";
+			this.GroupCommands.Size = new System.Drawing.Size(277, 519);
+			this.GroupCommands.TabIndex = 13;
+			this.GroupCommands.TabStop = false;
+			this.GroupCommands.Text = "Commands ";
 			// 
 			// flowLayoutPanel1
 			// 
@@ -174,7 +197,7 @@
 			this.flowLayoutPanel1.Controls.Add(this.ButtonEditCmd);
 			this.flowLayoutPanel1.Controls.Add(this.ButtonDeleteCmd);
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 29);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 27);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(271, 35);
 			this.flowLayoutPanel1.TabIndex = 13;
@@ -193,43 +216,52 @@
 			this.ButtonEditCmd.UseVisualStyleBackColor = true;
 			this.ButtonEditCmd.Click += new System.EventHandler(this.ButtonEditCmd_Click);
 			// 
-			// groupBox4
+			// GroupApps
 			// 
-			this.groupBox4.Controls.Add(this.flowLayoutPanel3);
-			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox4.Location = new System.Drawing.Point(0, 88);
-			this.groupBox4.MinimumSize = new System.Drawing.Size(0, 68);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(469, 68);
-			this.groupBox4.TabIndex = 15;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Applications";
-			this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+			this.GroupApps.Controls.Add(this.flowLayoutPanel3);
+			this.GroupApps.Dock = System.Windows.Forms.DockStyle.Top;
+			this.GroupApps.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.GroupApps.Location = new System.Drawing.Point(0, 88);
+			this.GroupApps.MinimumSize = new System.Drawing.Size(0, 68);
+			this.GroupApps.Name = "GroupApps";
+			this.GroupApps.Size = new System.Drawing.Size(469, 68);
+			this.GroupApps.TabIndex = 15;
+			this.GroupApps.TabStop = false;
+			this.GroupApps.Text = "Applications";
 			// 
 			// flowLayoutPanel3
 			// 
 			this.flowLayoutPanel3.Controls.Add(this.ComboApps);
 			this.flowLayoutPanel3.Controls.Add(this.ButtonDefaultApp);
 			this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 29);
+			this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 27);
 			this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-			this.flowLayoutPanel3.Size = new System.Drawing.Size(463, 36);
+			this.flowLayoutPanel3.Size = new System.Drawing.Size(463, 38);
 			this.flowLayoutPanel3.TabIndex = 3;
 			// 
-			// GroupBoxLog
+			// ButtonDefaultApp
 			// 
-			this.GroupBoxLog.Controls.Add(this.TextBoxLog);
-			this.GroupBoxLog.Controls.Add(this.ProgressVoiceCaptured);
-			this.GroupBoxLog.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.GroupBoxLog.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.GroupBoxLog.Location = new System.Drawing.Point(0, 156);
-			this.GroupBoxLog.Name = "GroupBoxLog";
-			this.GroupBoxLog.Size = new System.Drawing.Size(469, 387);
-			this.GroupBoxLog.TabIndex = 16;
-			this.GroupBoxLog.TabStop = false;
-			this.GroupBoxLog.Text = "Logs";
-			this.GroupBoxLog.Enter += new System.EventHandler(this.groupBox3_Enter);
+			this.ButtonDefaultApp.Image = global::Vocals.Properties.Resources.history6;
+			this.ButtonDefaultApp.Location = new System.Drawing.Point(431, 3);
+			this.ButtonDefaultApp.Name = "ButtonDefaultApp";
+			this.ButtonDefaultApp.Size = new System.Drawing.Size(28, 28);
+			this.ButtonDefaultApp.TabIndex = 2;
+			this.Tooltips.SetToolTip(this.ButtonDefaultApp, "Reload process list");
+			this.ButtonDefaultApp.UseVisualStyleBackColor = true;
+			this.ButtonDefaultApp.Click += new System.EventHandler(this.button6_Click);
+			// 
+			// GroupLogs
+			// 
+			this.GroupLogs.Controls.Add(this.TextBoxLog);
+			this.GroupLogs.Controls.Add(this.ProgressVoiceCaptured);
+			this.GroupLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.GroupLogs.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.GroupLogs.Location = new System.Drawing.Point(0, 156);
+			this.GroupLogs.Name = "GroupLogs";
+			this.GroupLogs.Size = new System.Drawing.Size(469, 387);
+			this.GroupLogs.TabIndex = 16;
+			this.GroupLogs.TabStop = false;
+			this.GroupLogs.Text = "Logs";
 			// 
 			// TextBoxLog
 			// 
@@ -269,50 +301,15 @@
 			this.MenuAdvancedSettings.TabIndex = 17;
 			this.MenuAdvancedSettings.Text = "menuStrip1";
 			// 
-			// ButtonDefaultApp
-			// 
-			this.ButtonDefaultApp.Image = global::Vocals.Properties.Resources.history6;
-			this.ButtonDefaultApp.Location = new System.Drawing.Point(431, 3);
-			this.ButtonDefaultApp.Name = "ButtonDefaultApp";
-			this.ButtonDefaultApp.Size = new System.Drawing.Size(28, 28);
-			this.ButtonDefaultApp.TabIndex = 2;
-			this.Tooltips.SetToolTip(this.ButtonDefaultApp, "Reload process list");
-			this.ButtonDefaultApp.UseVisualStyleBackColor = true;
-			this.ButtonDefaultApp.Click += new System.EventHandler(this.button6_Click);
-			// 
-			// ButtonAddProfile
-			// 
-			this.ButtonAddProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ButtonAddProfile.Image = global::Vocals.Properties.Resources.add186;
-			this.ButtonAddProfile.Location = new System.Drawing.Point(397, 3);
-			this.ButtonAddProfile.Name = "ButtonAddProfile";
-			this.ButtonAddProfile.Size = new System.Drawing.Size(28, 28);
-			this.ButtonAddProfile.TabIndex = 7;
-			this.Tooltips.SetToolTip(this.ButtonAddProfile, "Add a new profile");
-			this.ButtonAddProfile.UseVisualStyleBackColor = true;
-			this.ButtonAddProfile.Click += new System.EventHandler(this.ButtonAddProfile_Click);
-			// 
-			// ButtonDeleteProfile
-			// 
-			this.ButtonDeleteProfile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ButtonDeleteProfile.Image = global::Vocals.Properties.Resources.rubbish;
-			this.ButtonDeleteProfile.Location = new System.Drawing.Point(431, 3);
-			this.ButtonDeleteProfile.Name = "ButtonDeleteProfile";
-			this.ButtonDeleteProfile.Size = new System.Drawing.Size(28, 28);
-			this.ButtonDeleteProfile.TabIndex = 10;
-			this.Tooltips.SetToolTip(this.ButtonDeleteProfile, "Delete current profile");
-			this.ButtonDeleteProfile.UseVisualStyleBackColor = true;
-			this.ButtonDeleteProfile.Click += new System.EventHandler(this.ButtonDeleteProfile_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(746, 543);
-			this.Controls.Add(this.GroupBoxLog);
-			this.Controls.Add(this.groupBox4);
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.GroupLogs);
+			this.Controls.Add(this.GroupApps);
+			this.Controls.Add(this.GroupProfiles);
+			this.Controls.Add(this.GroupCommands);
 			this.Controls.Add(this.MenuAdvancedSettings);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.MenuAdvancedSettings;
@@ -320,14 +317,14 @@
 			this.Text = "Vocals";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
-			this.groupBox1.ResumeLayout(false);
+			this.GroupProfiles.ResumeLayout(false);
 			this.flowLayoutPanel2.ResumeLayout(false);
-			this.groupBox2.ResumeLayout(false);
+			this.GroupCommands.ResumeLayout(false);
 			this.flowLayoutPanel1.ResumeLayout(false);
 			this.flowLayoutPanel1.PerformLayout();
-			this.groupBox4.ResumeLayout(false);
+			this.GroupApps.ResumeLayout(false);
 			this.flowLayoutPanel3.ResumeLayout(false);
-			this.GroupBoxLog.ResumeLayout(false);
+			this.GroupLogs.ResumeLayout(false);
 			this.MenuAdvancedSettings.ResumeLayout(false);
 			this.MenuAdvancedSettings.PerformLayout();
 			this.ResumeLayout(false);
@@ -345,10 +342,10 @@
         private System.Windows.Forms.ListBox ListCommands;
         private System.Windows.Forms.Button ButtonDeleteProfile;
         private System.Windows.Forms.Button ButtonDeleteCmd;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox GroupBoxLog;
+        private System.Windows.Forms.GroupBox GroupProfiles;
+        private System.Windows.Forms.GroupBox GroupCommands;
+        private System.Windows.Forms.GroupBox GroupApps;
+        private System.Windows.Forms.GroupBox GroupLogs;
         private System.Windows.Forms.RichTextBox TextBoxLog;
         private System.Windows.Forms.Button ButtonEditCmd;
         private System.Windows.Forms.ToolStripMenuItem advancedSettingsToolStripMenuItem;

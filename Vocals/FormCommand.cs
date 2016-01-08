@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Vocals
@@ -29,7 +26,7 @@ namespace Vocals
 			answering = false;
 			answeringString = "";
 
-			listBox1.DataSource = actionList;
+			ListCommands.DataSource = actionList;
 		}
 
 		public FormCommand(Command c)
@@ -45,15 +42,14 @@ namespace Vocals
 			TextVoiceAnswer.Text = answeringString;
 
 			answeringSound = c.answeringSound;
-			checkBox2.Checked = answeringSound;
+			CheckUseSoundFile.Checked = answeringSound;
 
 			answeringSoundPath = c.answeringSoundPath;
 			textBox2.Text = answeringSoundPath;
 
-			listBox1.DataSource = actionList;
+			ListCommands.DataSource = actionList;
 			TextVoiceCommand.Text = commandString;
 		}
-
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
@@ -62,46 +58,37 @@ namespace Vocals
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			if (listBox1.SelectedItem != null)
+			if (ListCommands.SelectedItem != null)
 			{
-				actionList.RemoveAt(listBox1.SelectedIndex);
-				listBox1.DataSource = null;
-				listBox1.DataSource = actionList;
+				actionList.RemoveAt(ListCommands.SelectedIndex);
+				ListCommands.DataSource = null;
+				ListCommands.DataSource = actionList;
 			}
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void ButtonAdd_Click(object sender, EventArgs e)
 		{
-			FormAction newActionForm = new FormAction();
-			newActionForm.ShowDialog();
+			using (FormAction form = new FormAction())
+			{				
+				form.ShowDialog();
 
-			if (newActionForm.selectedType != "")
-			{
-				if (newActionForm.selectedType == "Key press" && newActionForm.selectedKey != Keys.None
-					|| newActionForm.selectedType == "Timer" && newActionForm.selectedTimer != 0)
+				if (form.SelectedType != "")
 				{
+					if (form.SelectedType == "Key press" && form.SelectedKey != Keys.None ||
+						form.SelectedType == "Timer" && form.SelectedTimer != 0)
+					{
+						Actions myNewAction = new Actions(form.SelectedType,
+							form.SelectedKey,
+							form.modifier,
+							form.SelectedTimer);
 
-					Actions myNewAction = new Actions(newActionForm.selectedType, newActionForm.selectedKey, newActionForm.modifier, newActionForm.selectedTimer);
+						actionList.Add(myNewAction);
 
-
-					actionList.Add(myNewAction);
-
-					listBox1.DataSource = null;
-					listBox1.DataSource = actionList;
-				}
+						ListCommands.DataSource = null;
+						ListCommands.DataSource = actionList;
+					}
+				} 
 			}
-
-
-		}
-
-		private void FormPopup_Load(object sender, EventArgs e)
-		{
-
-		}
-
-		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
 		}
 
 		private void button4_Click(object sender, EventArgs e)
@@ -118,56 +105,53 @@ namespace Vocals
 
 		private void ButtonEdit_Click(object sender, EventArgs e)
 		{
-			Actions a = (Actions)listBox1.SelectedItem;
+			Actions a = (Actions)ListCommands.SelectedItem;
 			if (a != null)
 			{
 				FormAction formEditAction = new FormAction(a);
 				formEditAction.ShowDialog();
 
-				a.keys = formEditAction.selectedKey;
-				a.type = formEditAction.selectedType;
+				a.keys = formEditAction.SelectedKey;
+				a.type = formEditAction.SelectedType;
 				a.keyModifier = formEditAction.modifier;
-				a.timer = (float)formEditAction.selectedTimer;
+				a.timer = (float)formEditAction.SelectedTimer;
 
-				listBox1.DataSource = null;
-				listBox1.DataSource = actionList;
-
-
+				ListCommands.DataSource = null;
+				ListCommands.DataSource = actionList;
 			}
 		}
 
 		private void groupBox2_Enter(object sender, EventArgs e)
 		{
-
 		}
 
 		private void button6_Click(object sender, EventArgs e)
 		{
-			int selectedIndex = listBox1.SelectedIndex;
+			int selectedIndex = ListCommands.SelectedIndex;
 			if (selectedIndex > 0)
 			{
 				Actions actionToMoveDown = actionList.ElementAt(selectedIndex - 1);
 				actionList.RemoveAt(selectedIndex - 1);
 				actionList.Insert(selectedIndex, actionToMoveDown);
 
-				listBox1.DataSource = null;
-				listBox1.DataSource = actionList;
-				listBox1.SelectedIndex = selectedIndex - 1;
+				ListCommands.DataSource = null;
+				ListCommands.DataSource = actionList;
+				ListCommands.SelectedIndex = selectedIndex - 1;
 			}
 		}
 
 		private void button7_Click(object sender, EventArgs e)
 		{
-			int selectedIndex = listBox1.SelectedIndex;
+			int selectedIndex = ListCommands.SelectedIndex;
 			if (selectedIndex < actionList.Count - 1)
 			{
 				Actions actionToMoveUp = actionList.ElementAt(selectedIndex + 1);
 				actionList.RemoveAt(selectedIndex + 1);
 				actionList.Insert(selectedIndex, actionToMoveUp);
 
-				listBox1.DataSource = null;
-				listBox1.DataSource = actionList;
-				listBox1.SelectedIndex = selectedIndex + 1;
+				ListCommands.DataSource = null;
+				ListCommands.DataSource = actionList;
+				ListCommands.SelectedIndex = selectedIndex + 1;
 			}
 		}
 
@@ -180,21 +164,18 @@ namespace Vocals
 		{
 			if (checkBox1.Checked)
 			{
-				checkBox2.Checked = false;
+				CheckUseSoundFile.Checked = false;
 				answeringSound = false;
 			}
 			answering = checkBox1.Checked;
-
 		}
 
 		private void groupBox4_Enter(object sender, EventArgs e)
 		{
-
 		}
 
 		private void richTextBox2_TextChanged(object sender, EventArgs e)
 		{
-
 		}
 
 		private void button9_Click(object sender, EventArgs e)
@@ -208,22 +189,19 @@ namespace Vocals
 				textBox2.Text = ofd.InitialDirectory + ofd.FileName;
 				answeringSoundPath = textBox2.Text;
 			}
-
 		}
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
 		{
-
 		}
 
 		private void textBox2_TextChanged(object sender, EventArgs e)
 		{
-
 		}
 
 		private void checkBox2_CheckedChanged(object sender, EventArgs e)
 		{
-			if (checkBox2.Checked)
+			if (CheckUseSoundFile.Checked)
 			{
 				checkBox1.Checked = false;
 				answering = false;

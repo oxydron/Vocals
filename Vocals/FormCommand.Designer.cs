@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.TextVoiceCommand = new System.Windows.Forms.TextBox();
-			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.ListCommands = new System.Windows.Forms.ListBox();
 			this.ButtonAdd = new System.Windows.Forms.Button();
 			this.ButtonDelete = new System.Windows.Forms.Button();
 			this.ButtonSave = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
 			this.TextVoiceAnswer = new System.Windows.Forms.RichTextBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.CheckUseSoundFile = new System.Windows.Forms.CheckBox();
 			this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
 			this.ButtonOpen = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -74,18 +74,17 @@
 			this.TextVoiceCommand.TabIndex = 0;
 			this.TextVoiceCommand.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
-			// listBox1
+			// ListCommands
 			// 
-			this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.ItemHeight = 20;
-			this.listBox1.Location = new System.Drawing.Point(3, 43);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(338, 336);
-			this.listBox1.TabIndex = 4;
-			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-			this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+			this.ListCommands.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ListCommands.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ListCommands.FormattingEnabled = true;
+			this.ListCommands.ItemHeight = 20;
+			this.ListCommands.Location = new System.Drawing.Point(3, 43);
+			this.ListCommands.Name = "ListCommands";
+			this.ListCommands.Size = new System.Drawing.Size(338, 336);
+			this.ListCommands.TabIndex = 4;
+			this.ListCommands.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
 			// 
 			// ButtonAdd
 			// 
@@ -98,7 +97,7 @@
 			this.ButtonAdd.TabIndex = 5;
 			this.ButtonAdd.Text = "Add";
 			this.ButtonAdd.UseVisualStyleBackColor = true;
-			this.ButtonAdd.Click += new System.EventHandler(this.button1_Click);
+			this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
 			// 
 			// ButtonDelete
 			// 
@@ -223,7 +222,7 @@
 			this.tableLayoutPanel3.ColumnCount = 1;
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 0, 0);
-			this.tableLayoutPanel3.Controls.Add(this.listBox1, 0, 1);
+			this.tableLayoutPanel3.Controls.Add(this.ListCommands, 0, 1);
 			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -300,7 +299,7 @@
 			this.tableLayoutPanel4.ColumnCount = 1;
 			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel4.Controls.Add(this.checkBox1, 0, 0);
-			this.tableLayoutPanel4.Controls.Add(this.checkBox2, 0, 2);
+			this.tableLayoutPanel4.Controls.Add(this.CheckUseSoundFile, 0, 2);
 			this.tableLayoutPanel4.Controls.Add(this.TextVoiceAnswer, 0, 1);
 			this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 3);
 			this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -314,17 +313,17 @@
 			this.tableLayoutPanel4.Size = new System.Drawing.Size(348, 317);
 			this.tableLayoutPanel4.TabIndex = 18;
 			// 
-			// checkBox2
+			// CheckUseSoundFile
 			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkBox2.Location = new System.Drawing.Point(3, 246);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(161, 24);
-			this.checkBox2.TabIndex = 14;
-			this.checkBox2.Text = "Use sound file (wav)";
-			this.checkBox2.UseVisualStyleBackColor = true;
-			this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+			this.CheckUseSoundFile.AutoSize = true;
+			this.CheckUseSoundFile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.CheckUseSoundFile.Location = new System.Drawing.Point(3, 246);
+			this.CheckUseSoundFile.Name = "CheckUseSoundFile";
+			this.CheckUseSoundFile.Size = new System.Drawing.Size(216, 24);
+			this.CheckUseSoundFile.TabIndex = 14;
+			this.CheckUseSoundFile.Text = "Use sound file (*.mp3, *.wav)";
+			this.CheckUseSoundFile.UseVisualStyleBackColor = true;
+			this.CheckUseSoundFile.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
 			// 
 			// tableLayoutPanel5
 			// 
@@ -387,7 +386,6 @@
 			this.MinimumSize = new System.Drawing.Size(600, 380);
 			this.Name = "FormCommand";
 			this.Text = "New Command";
-			this.Load += new System.EventHandler(this.FormPopup_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
@@ -410,7 +408,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox TextVoiceCommand;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ListCommands;
         private System.Windows.Forms.Button ButtonAdd;
         private System.Windows.Forms.Button ButtonDelete;
         private System.Windows.Forms.Button ButtonSave;
@@ -423,7 +421,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox TextVoiceAnswer;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox CheckUseSoundFile;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button ButtonOpen;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
