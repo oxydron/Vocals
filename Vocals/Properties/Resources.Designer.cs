@@ -73,9 +73,29 @@ namespace Vocals.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow483 {
+            get {
+                object obj = ResourceManager.GetObject("arrow483", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap history6 {
             get {
                 object obj = ResourceManager.GetObject("history6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navigate6 {
+            get {
+                object obj = ResourceManager.GetObject("navigate6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
